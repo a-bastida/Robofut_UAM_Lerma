@@ -79,6 +79,8 @@ Sigue estos pasos en orden para montar el entorno y ejecutar la segmentación:
 <img width="1175" height="1011" alt="image" src="https://github.com/user-attachments/assets/dedf7a4d-c812-492a-bdd2-c9163922f111" />
 <img width="1171" height="1007" alt="image" src="https://github.com/user-attachments/assets/4e7472f9-0210-4a57-92e0-e8bcc126b5d1" />
 <img width="1187" height="1007" alt="image" src="https://github.com/user-attachments/assets/edb9d16a-b02a-43d1-ac89-fbce635c5af6" />
+<img width="751" height="748" alt="image" src="https://github.com/user-attachments/assets/de4f09b1-40b5-41b7-9124-eba631652e0d" />
+
 
 
 ---
@@ -89,7 +91,7 @@ Sigue estos pasos en orden para montar el entorno y ejecutar la segmentación:
 ---
 ## 📱 Reel de Instagram
 *(Espacio reservado para incluir el enlace al Reel demostrativo del proyecto)*
-
+[![Reel de Instagram](https://github.com/user-attachments/assets/de4f09b1-40b5-41b7-9124-eba631652e0d)](https://www.instagram.com/reel/DZxxZ8_A4dp/?igsh=MWJydjQ0ZTBkbWFxZg==)
 ---
 
 ## 📄 Licencia
