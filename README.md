@@ -1,58 +1,84 @@
 # Robofut_UAM_Lerma
 
-# Segmentación Iterativa de Video de Robots con SAM 3
+# Segmentación Multi-Objeto por Iteraciones en Video
 
-[cite_start]Este repositorio contiene la solución para realizar la segmentación de objetos múltiples en video utilizando el modelo SAM 3 (Segment Anything Model 3) de Meta[cite: 26]. [cite_start]El proyecto procesa un video de robots jugando al fútbol, segmentando por capas los equipos y la pelota, además de actualizar dinámicamente un marcador cuando se anota un gol[cite: 3, 5, 6].
-
----
-
-## 📋 Arquitectura y Enfoque de la Solución
-
-[cite_start]La segmentación del video se realiza de forma **iterativa y por capas** utilizando la notebook `test_multisegmentation_iter_video.ipynb`[cite: 1, 2, 5]. [cite_start]En cada iteración se segmenta una categoría específica de objeto y el resultado sirve como entrada para la siguiente etapa[cite: 4, 6]:
-
-1. [cite_start]**Iteración 1 (Equipo 1):** Segmenta los robots pertenecientes al Equipo 1[cite: 5].
-2. [cite_start]**Iteración 2 (Equipo 2):** Toma el video resultante de la primera iteración y añade la segmentación de los robots del Equipo 2[cite: 6].
-3. [cite_start]**Iteración 3 (Pelota):** Realiza la segmentación y detección de la pelota[cite: 6]. [cite_start]En esta etapa se evalúa si la pelota ingresa a las porterías para modificar el marcador en tiempo real y lanzar un mensaje de "¡Gol!"[cite: 6].
+Este proyecto implementa un enfoque de segmentación por capas e iterativo para identificar y rastrear múltiples objetos (equipos de robots y la pelota) en un video utilizando el modelo **SAM 3** (Segment Anything Model 3) de Meta[cite: 3, 6, 26].
 
 ---
 
-## 🎥 Descripción de los Videos
+## 🛠️ Descripción del Enfoque y Arquitectura de la Solución
+
+La notebook principal (`test_multisegmentation_iter_video.ipynb`) contiene todo el código necesario para procesar y segmentar el video original[cite: 2]. 
+
+La segmentación del video requiere clasificar múltiples objetos pertenecientes a tres categorías específicas: **Equipo_1**, **Equipo_2** y **pelota**[cite: 3]. El pipeline funciona de manera **iterativa y por capas**[cite: 4, 5]:
+
+1. **Primera Iteración (Equipo_1):** Se segmentan únicamente los robots pertenecientes al Equipo_1. El resultado es un video intermedio con esta capa aislada[cite: 5].
+2. **Segunda Iteración (Equipo_2):** Se toma el video resultante de la iteración anterior y se realiza la segmentación sobre los robots del Equipo_2[cite: 6].
+3. **Última Iteración (Pelota y Marcador):** Se procesa la pelota y se aplica una detección basada en zonas (porterías izquierda y derecha) para modificar dinámicamente un marcador en pantalla y lanzar un mensaje de anotación[cite: 6].
+
+---
+
+## 📹 Descripción del Video Original y Segmentado
 
 ### Video Original
-* [cite_start]**Contenido:** Tres robots y una pelota de color naranja[cite: 9].
-* [cite_start]**Equipos:** * **Equipo 1:** Formado por dos robots de color verde[cite: 10]. [cite_start]Defienden la portería azul[cite: 11].
-  * [cite_start]**Equipo 2:** Formado por un solo robot de color blanco[cite: 10].
-* [cite_start]**Evento clave:** El Equipo 2 anota un gol metiendo la pelota en la portería azul[cite: 11].
+* Presenta tres robots en total y una pelota de color naranja[cite: 9].
+* **Equipo_1:** Compuesto por dos robots de color verde[cite: 10]. Defienden la portería azul durante un tiempo[cite: 11].
+* **Equipo_2:** Compuesto por un único robot de color blanco[cite: 10]. Este equipo logra anotar un gol en la portería azul[cite: 11].
 
 ### Video Segmentado
-* [cite_start]Mantiene los mismos eventos del video original pero resalta los objetos por categorías con máscaras consistentes a lo largo del tiempo[cite: 12, 13, 15]:
-  * [cite_start]**Equipo 1:** Robots resaltados en color verde (etiquetados como `robot 0` y `robot 1`)[cite: 14, 17].
-  * [cite_start]**Equipo 2:** Robot resaltado en color blanco (etiquetado como `robot 0`)[cite: 14, 17].
-  * [cite_start]**Pelota:** Segmentada en color naranja (etiquetada como `id 0`)[cite: 14, 17].
-* [cite_start]**Marcador Dinámico:** Se muestra un marcador negro en la parte superior izquierda (inicia en `0-0`)[cite: 16, 17]. [cite_start]Al entrar la pelota a la portería izquierda, cambia a `1-0` y muestra el mensaje en color blanco: **"¡Gol en la portería izq!"**[cite: 16, 17].
+* Muestra los mismos eventos pero resaltando visualmente la pelota y los robots[cite: 12].
+* Cada objeto se divide en las tres categorías mencionadas, asignándoles un color y una etiqueta (*label*) con un ID numérico que inicia desde 0[cite: 13, 14]:
+  * **Equipo_1:** Color verde (Robot 0 y Robot 1)[cite: 14, 17].
+  * **Equipo_2:** Color blanco (Robot 0)[cite: 14, 17].
+  * **Pelota:** Color naranja (Pelota 0)[cite: 14, 17].
+* Las máscaras de segmentación mantienen la consistencia a lo largo de todo el video[cite: 15].
+* **Marcador dinámico:** En la esquina superior izquierda se visualiza un marcador negro[cite: 16]. Inicia en `0-0` y, en el instante en que la pelota cruza la portería izquierda, cambia a `1-0` junto con un mensaje en texto blanco: `"¡Gol en la portería izq!"`[cite: 16, 17].
 
 ---
 
-## 🛠️ Requisitos del Sistema
+## 💻 Requisitos del Hardware y Software
 
-[cite_start]Para ejecutar correctamente la notebook, asegúrate de cumplir con lo siguiente[cite: 19]:
+Para ejecutar la notebook correctamente, asegúrate de cumplir con lo siguiente[cite: 19]:
 
-1. [cite_start]**Hardware y Software de Meta:** Cumplir con los requerimientos mínimos del [repositorio oficial de Meta SAM 3](https://github.com/facebookresearch/segment-anything-2) *(Nota: Validar enlace)*[cite: 20, 26].
-2. [cite_start]**Hugging Face Token:** Se requiere un token de lectura para autenticar la cuenta y descargar el modelo por primera vez[cite: 21, 24].
-3. [cite_start]**FFmpeg:** Debe estar instalado en la computadora y correctamente añadido a las variables de entorno (`PATH`) para su ejecución por comandos en la terminal[cite: 22, 31].
-4. [cite_start]**Triton:** Requerido para la optimización del modelo[cite: 28].
-
-> [cite_start]💡 **Nota:** Se adjunta el archivo `requirements.txt` con las versiones exactas de las librerías utilizadas en este proyecto[cite: 23].
+* **Repositorio de Meta:** Cumplir con los requerimientos mínimos del repositorio oficial de SAM 3 de Meta[cite: 20, 26].
+* **FFmpeg:** Tener instalado FFmpeg en el sistema operativo y debidamente configurado en las variables de entorno (*PATH*) para su ejecución en CMD[cite: 22, 31].
+* **Hugging Face Account:** Disponer de una cuenta en Hugging Face, haber solicitado acceso al modelo SAM 3 y contar con un token de autenticación (necesario solo para la primera descarga)[cite: 21, 24, 29, 30].
+* **Dependencias de Python:** Se adjunta un archivo `requirements.txt` con las versiones de las librerías empleadas en este desarrollo[cite: 23].
 
 ---
 
-## 🚀 Instalación y Reproducción Paso a Paso
+## 🚀 Instrucciones de Instalación y Reproducción Paso a Paso
 
-[cite_start]Sigue estos pasos para configurar el entorno y ejecutar la segmentación[cite: 25]:
+Sigue estos pasos en orden para montar el entorno y ejecutar la segmentación:
 
-### 1. Clonar e instalar dependencias de SAM 3
-[cite_start]Primero, clona el repositorio oficial de SAM 3 de Meta e instala sus librerías a través de su archivo `.toml`[cite: 26, 27]:
-```bash
-git clone <URL_DEL_REPOSITORIO_OFICIAL_DE_SAM3>
-cd <REPOSITORIO_DE_SAM3>
-# Instalar dependencias del archivo .toml
+1. **Clonar el repositorio oficial** de SAM 3 de Facebook (Meta)[cite: 26].
+2. **Instalar las librerías** requeridas incluidas en el archivo `.toml` del repositorio oficial de Meta[cite: 27].
+3. **Instalar Triton** en tu entorno[cite: 28].
+4. **Solicitar acceso** al modelo SAM 3 en Hugging Face y generar tu Token de autenticación[cite: 29, 30].
+5. **Instalar FFmpeg** y habilitarlo en el *PATH* de tu computadora[cite: 31].
+6. Configurar un archivo `.env` en la raíz del proyecto que contenga tu token de Hugging Face[cite: 33].
+7. Colocar el video original (debe ser obligatoriamente el archivo `IMG_9856.MOV`, ya que los polígonos de detección de la portería están calibrados específicamente para las zonas de este video) dentro de la ruta: `assets/videos/`[cite: 37, 38].
+
+### Ejecución de la Notebook (`test_multisegmentation_iter_video.ipynb`) [cite: 32]
+
+* **Celda 1:** Realiza la autenticación con Hugging Face leyendo el archivo `.env`[cite: 33].
+* **Celda 2:** Carga las funciones base de segmentación[cite: 34]. Contiene un diccionario para definir los colores por cada *prompt* y la función `etiqueta` encargada de transformar los textos de los *prompts* en los labels de los objetos[cite: 35, 36].
+* **Celda 3:** Imprime la información del sistema y define la ruta del video origen en la variable `SOURCE_VIDEO`[cite: 39].
+* **Celda 4:** Ejecuta la segmentación iterativa por capas empleando la lista de *prompts*[cite: 40]. *Nota: Asegúrate de que esta lista coincida exactamente con la configuración de colores y etiquetas de la celda 2[cite: 40].*
+* **Celda 5 (Penúltima):** Permite visualizar el video procesado dentro del IDE de Jupyter (Nota: Solo es compatible con formatos `.mp4`)[cite: 41].
+* **Celda 6 (Última):** Cierra el predictor y finaliza de manera segura la sesión del modelo[cite: 42].
+
+---
+
+## 📸 Capturas de Pantalla o GIFs
+*(Espacio reservado para añadir imágenes/GIFs demostrativos del proceso de segmentación)* [cite: 43]
+
+---
+
+## 📱 Reel de Instagram
+*(Espacio reservado para incluir el enlace al Reel demostrativo del proyecto)* [cite: 44]
+
+---
+
+## 📄 Licencia
+*(Espacio reservado para definir la licencia del proyecto)* [cite: 45]
