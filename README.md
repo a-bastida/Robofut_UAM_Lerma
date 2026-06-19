@@ -73,6 +73,11 @@ Sigue estos pasos en orden para montar el entorno y ejecutar la segmentación:
 ## 📸 Capturas de Pantalla o GIFs
 *(Espacio reservado para añadir imágenes/GIFs demostrativos del proceso de segmentación)*
 <img width="1842" height="877" alt="Zona_gol" src="https://github.com/user-attachments/assets/511af8ef-99c0-41aa-b7c0-8314ace270ba" />
+<img width="1167" height="972" alt="image" src="https://github.com/user-attachments/assets/78f90546-c7b0-406d-9b38-9389a2b35107" />
+<img width="1171" height="1010" alt="image" src="https://github.com/user-attachments/assets/b51bda4a-7a0b-4e11-b04a-1e47b0214489" />
+<img width="1175" height="1011" alt="image" src="https://github.com/user-attachments/assets/dedf7a4d-c812-492a-bdd2-c9163922f111" />
+<img width="1171" height="1007" alt="image" src="https://github.com/user-attachments/assets/4e7472f9-0210-4a57-92e0-e8bcc126b5d1" />
+<img width="1187" height="1007" alt="image" src="https://github.com/user-attachments/assets/edb9d16a-b02a-43d1-ac89-fbce635c5af6" />
 
 
 ---
