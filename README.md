@@ -51,7 +51,7 @@ Para ejecutar la notebook correctamente, asegúrate de cumplir con lo siguiente:
 
 Sigue estos pasos en orden para montar el entorno y ejecutar la segmentación:
 
-1. **Clonar el repositorio oficial** de SAM 3 de Facebook (Meta).
+1. **Clonar el repositorio oficial** de [SAM 3 de Facebook (Meta)](https://github.com/facebookresearch/sam3).
 2. **Instalar las librerías** requeridas incluidas en el archivo `.toml` del repositorio oficial de Meta.
 3. **Instalar Triton** en tu entorno.
 4. **Solicitar acceso** al modelo SAM 3 en Hugging Face y generar tu Token de autenticación.
