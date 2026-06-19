@@ -83,8 +83,9 @@ Sigue estos pasos en orden para montar el entorno y ejecutar la segmentación:
 
 ---
 ## Video
-*(El video se encuentra en Youtube)* \
-![Video](https://youtube.com/shorts/447f1iQCiPE?feature=share)](https://youtube.com/shorts/447f1iQCiPE?feature=share)
+*(El video se encuentra en Youtube en https://youtube.com/shorts/447f1iQCiPE?feature=share)* \
+[![IMAGE ALT TEXT HERE](https://github.com/user-attachments/assets/78f90546-c7b0-406d-9b38-9389a2b35107)](https://youtube.com/shorts/447f1iQCiPE?feature=share)
+![Video](https://github.com/user-attachments/assets/78f90546-c7b0-406d-9b38-9389a2b35107)](https://youtube.com/shorts/447f1iQCiPE?feature=share)
 
 ---
 ## 📱 Reel de Instagram
