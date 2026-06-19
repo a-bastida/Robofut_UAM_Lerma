@@ -90,7 +90,8 @@ Sigue estos pasos en orden para montar el entorno y ejecutar la segmentación:
 
 ---
 ## 📱 Reel de Instagram
-*(El video se encuentra en Youtube en https://www.instagram.com/reel/DZxxZ8_A4dp/?igsh=MWJydjQ0ZTBkbWFxZg==)* \
+*(El video se encuentra en Instagram en https://www.instagram.com/reel/DZxxZ8_A4dp/?igsh=MWJydjQ0ZTBkbWFxZg==)* \
+
 [![Reel de Instagram](https://github.com/user-attachments/assets/de4f09b1-40b5-41b7-9124-eba631652e0d)](https://www.instagram.com/reel/DZxxZ8_A4dp/?igsh=MWJydjQ0ZTBkbWFxZg==)
 ---
 
