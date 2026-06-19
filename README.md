@@ -82,7 +82,11 @@ Sigue estos pasos en orden para montar el entorno y ejecutar la segmentación:
 
 
 ---
+## Video
+*(El video se encuentra en Youtube)* \
+![Video](https://youtube.com/shorts/447f1iQCiPE?feature=share)](https://youtube.com/shorts/447f1iQCiPE?feature=share)
 
+---
 ## 📱 Reel de Instagram
 *(Espacio reservado para incluir el enlace al Reel demostrativo del proyecto)*
 
