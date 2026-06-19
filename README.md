@@ -95,4 +95,4 @@ Sigue estos pasos en orden para montar el entorno y ejecutar la segmentación:
 ---
 
 ## 📄 Licencia
-*(Espacio reservado para definir la licencia del proyecto)* [cite: 45]
+Este proyecto está bajo la [Licencia de SAM3](LICENSE)
